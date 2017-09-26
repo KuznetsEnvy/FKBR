@@ -1,0 +1,12 @@
+{% assign inv_mngmt_size = product.variants.first.inventory_management | size %}
+{% assign limit_as_int = settings.prod_stock_warn_limit | plus: 0 %}
+
+{% if product.available == false and settings.label_soldout_show %}
+    <span class="product-label soldout"><span>{{ 'products.labels.sold_out' | t }}</span></span>
+{% else %}
+    {% for tag in product.tags %}
+        {% if tag contains 'meta-label-' %}
+            <span class="product-label general"><span>{{ tag | remove: 'meta-label-' }}</span></span>
+        {% endif %}
+    {% endfor %}
+{% endif %}

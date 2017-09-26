@@ -1,0 +1,121 @@
+{
+  "general": {
+    "404": {
+      "title": "Página não encontrada",
+      "subtext_html": "Desculpe, não conseguimos encontrar essa página. <a href=\"\/\">Continue comprando<\/a> ou <a href=\"\/pages\/support\">notifique o problema<\/a>."
+    }
+  },
+  "layout": {
+    "header": {
+      "secure_payment_html": "<nobr>Pagamento seguro<\/nobr> <nobr>e encriptado<\/nobr>"
+    },
+    "cart_summary": {
+      "continue_shopping": "Continue comprando",
+      "title": "Seu pedido",
+      "cart": "Ver carrinho",
+      "checkout": "Pagamento",
+      "subtotal": "Subtotal"
+    },
+    "signup": {
+      "button": "Participar",
+      "post_success": "Obrigado por se cadastrar!"
+    },
+    "mobile_navigation": {
+      "back": "Crie memória pra vida toda"
+    },
+    "banners": {
+      "memories_last_forever": "Crie memórias para toda a vida",
+      "memories_last_forever_html": "<span>Crie memórias<\/span><br \/><em>para toda a vida<\/em>",
+      "bring_best_friend_html": "<span>Traga seu<\/span><br \/><em>melhor amigo<\/em>"
+    },
+    "misc": {
+      "summer_story_html": "<nobr>Cada verão tem<\/nobr> <nobr>sua própria história ;)<\/nobr>",
+      "follow_us_html": "<em>Siga-nos<\/em> em"
+    },
+    "footer": {
+      "copyright": "Todos os direitos reservados"
+    }
+  },
+  "cart": {
+    "general": {
+      "title": "Meu carrinho",
+      "title_short": "Carrinho",
+      "review_cart": "Revise seu carrinho",
+      "empty": "Seu carrinho está vazio",
+      "no_items": "Seu carrinho está vazio",
+      "update": "Atualizar",
+      "remove": "Remover",
+      "continue": "Continue comprando",
+      "keep": "Continuar comprando",
+      "click_to_continue_html": "<a href=\"\/\">Clique aqui<\/a> para continuar comprando",
+      "checkout": "Pagamento",
+      "to_checkout": "Ir para o pagamento"
+    },
+    "label": {
+      "description": "Itens",
+      "price": "Preço",
+      "quantity": "Quantidade",
+      "subtotal": "Subtotal antes do frete",
+      "total": "Total"
+    },
+    "shipping": {
+      "shipping-banner_html": "<b>Frete grátis<\/b> em pedidos acima de",
+      "got_free_shipping": "Você ganhou frete grátis",
+      "add_for_free_shipping": "Adicione {{ dif }} para Frete grátis.",
+      "add_for_free_shipping_html": "Adicione {{ dif }} para <b>Frete grátis<\/b>.",
+      "free_shipping_added": "Frete grátis adicionado!",
+      "almost_there": "Você está a um passo do frete grátis!"
+    }
+  },
+  "pages": {
+    "support": {
+      "here_to_help_html": "a equipe do <span>FloatieKings<\/span> está aqui para te ajudar!",
+      "track_order": "Rastreie seu pedido",
+      "email_support": "Suporte por email",
+      "wholesale": "Vendas no atacado",
+      "general_inquiries": "Dúvidas frequentes"
+    },
+    "win_cash": {
+      "want_to_win_html": "Quer <strong>ganhar $5000 em dinheiro?<\/strong>",
+      "enter_here": "Entre aqui",
+      "submit_details_html": "<b>Coloque<\/b> seus dados para se cadastrar"
+    },
+    "upsell": {
+      "block_title_html": "<span class=\"content\">Boas notícias!<\/span> Seu carrinho se qualificou para esses  <strong>bônus<\/strong>",
+      "normal_price": "Preço Normal"
+    },
+    "forms": {
+      "your_name": "Seu nome",
+      "email": "Email",
+      "enter": "Entrar"
+    },
+    "buttons": {
+      "enter": "Entrar",
+      "select": "Selecionar",
+      "selected": "Selecionado",
+      "see_more": "Veja mais",
+      "shop_now": "Compre já"
+    }
+  },
+  "products": {
+    "product": {
+      "product_unavailable": "Produto Indisponível",
+      "product_unavailable_html": "Avise-me quando voltar ao estoque",
+      "quantity": "Quantidade",
+      "add_to_cart_html": "Colocar no carrinho",
+      "backorder": "está atrasado. Enviaremos pra você em 10-15 dias",
+      "adding_to_cart": "Adicionando ao carrinho...",
+      "added_to_cart_btn": "Adicionado",
+      "related_title": "Não deixe de conferir esses aqui também",
+      "hand_made_html": "<span>Feito<\/span> <span>à mão<\/span>",
+      "high_quality_html": "<span>Alta<\/span> <span>qualidade<\/span>",
+      "durable_materials_html": "<span>Materiais<\/span> <span>duráveis<\/span>",
+      "easy_setup_html": "<span>Instalação<\/span> <span>simples<\/span>",
+      "secure_checkout_html": "<span>Compra<\/span> <span>segura<\/span>",
+      "fast_shipping_html": "<span>Envio<\/span> <span>rápido<\/span>"
+    },
+    "labels": {
+      "sale": "Promoção"
+    }
+  }
+}
