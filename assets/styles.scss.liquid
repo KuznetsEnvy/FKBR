@@ -28,7 +28,6 @@ $desktop: "screen and (min-width: 768px)";
   src: url("{{ 'Have Heart One.ttf' | asset_url | split:'?' | first }}") format("truetype"),
   url("{{ 'Have Heart One.otf' | asset_url | split:'?' | first }}") format("opentype");
 }
-
 //endregion
 
 .clearfix, .cf {
@@ -7106,10 +7105,6 @@ a#upsellclosebtn {
   color: #000;
 }
 
-.banner-index img {
-  width: 100%;
-}
-
 .product-details .rte a.notify {
   color: #fff;
   background-color: #000;
@@ -8574,6 +8569,10 @@ button.buy-now.black:hover {
     display: flex;
     justify-content: center;
 
+    img {
+      width: 100%;
+    }
+
     @media #{$desktop} {
       margin: 2vw 9.2vw 40px;
     }
@@ -8926,11 +8925,19 @@ button.buy-now.black:hover {
   align-items: center;
 }
 
+//region Instagram_mobile
 @media #{$mobile} {
-  //region Instagram_mobile
   #insta {
     display: block;
     white-space: nowrap;
+
+    h4 {
+      font-family: "Have Heart One";
+      font-size: 12.11vw;
+      font-weight: 400;
+      text-align: center;
+      white-space: normal;
+    }
 
     .header {
       background-color: black;
@@ -8962,12 +8969,20 @@ button.buy-now.black:hover {
       }
     }
   }
-  //endregion
 }
 
+//endregion
+//region Instagram_desktop
 @media #{$desktop} {
-  //region Instagram_desktop
   #insta {
+    h4 {
+      font-family: "Have Heart One";
+      font-size: 3.6vw;
+      font-weight: 400;
+      text-align: center;
+      white-space: normal;
+      margin: 0.5em 0;
+    }
     .header {
       text-align: center;
       text-transform: uppercase;
@@ -9015,8 +9030,9 @@ button.buy-now.black:hover {
 
     }
   }
-  //endregion
 }
+
+//endregion
 
 .page-footer {
   padding: 4.9vw 0 2.66vw;

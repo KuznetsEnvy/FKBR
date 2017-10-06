@@ -117,6 +117,11 @@
 </head>
 
 <body class="template-{{ template | split: '.' | first }} {{ page_title | handle }}">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-53Z4XRB"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+  
 <div id="loading-overlay" style="z-index: 999; position: fixed; top:0; left: 0; width: 100%; height: 100%; display: flex; justify-content: center; align-items:center; background-color: white; display: none;">
   <img src="{{ 'Preloader_21.gif' | asset_url | split:'?' | first }}" alt="loading image"/></div>
 <script>
@@ -165,7 +170,7 @@
     <div><!-- This div is needed for flexbox alignment --></div>
     <a class="text-logo" href="{{ shop.url }}"><strong>Floatie</strong> Kings</a>
     <div class="cart-wrap">
-      <a class="current-cart {% if template != 'cart' %}toggle-cart-summary{% endif %}">{{ cart.item_count }}</a>
+      <a class="current-cart cart-count {% if template != 'cart' %}toggle-cart-summary{% endif %}">{{ cart.item_count }}</a>
     </div>
   </div>
 
