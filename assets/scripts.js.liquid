@@ -1025,6 +1025,10 @@ $('a[rel=lightbox]').colorbox({ minWidth: '200', maxWidth: '96%', maxHeight: '96
       $('#mc_embed_signup_scroll input').hide();
       $('.popup .bottom').hide();
       $('.popup .top').css({'display': 'flex'});
+
+      if(typeof(ga) == 'function'){
+          ga('send', 'event', 'Popup', 'Email Signup', 'Email Subscriber');
+      }
     }
 
 
