@@ -1067,3 +1067,21 @@ $('a[rel=lightbox]').colorbox({ minWidth: '200', maxWidth: '96%', maxHeight: '96
 
 });
 
+// Fixed pre-header handlers
+$('.js-close-pre_header').click(function(){
+    $('#pre_header').addClass('is-closed');
+    $('#header').css('padding-top', 0);
+
+    if (typeof(Storage) !== "undefined") {
+        // Code for localStorage/sessionStorage.
+        sessionStorage.setItem('bannerFreeShipingCloser', true );
+    } else {
+        // Sorry! No Web Storage support..
+    }
+});
+if (sessionStorage.getItem('bannerFreeShipingCloser') === 'true' ) {
+    $('#pre_header').hide();
+} else {
+    $('#pre_header').show();
+    $('#header').css('padding-top', $('#pre_header').outerHeight());
+}
