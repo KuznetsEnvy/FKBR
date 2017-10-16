@@ -215,10 +215,10 @@
               {% if large != blank %}
                 <div class="column flex sixth info-sec-large">
                   <img src="{{ info.large }}" title="{{ product.title | escape }}"/>
-                  <span class="nn-secondary-middle">{{ smallarge_textl_3_text }}</span>
                 </div>
               {% endif %}
             </div>
+            {% if large_text != 'blank' %}<div class="dimensions-info">{{ large_text }}</div>{% endif %}
           </div>
           <div class="border-bottom section padless-top cf product-title-row column">
             <div class="product-title">
