@@ -71,7 +71,17 @@ form.wufoo {
     }
   }
 
+  input.text, textarea.textarea, input.file, select.select {
+    font-style: inherit;
+    font-weight: inherit;
+    color: inherit;
+    font-size: inherit;
+  }
+
   header.info {
+    padding: 0 1% 0.5em 1%;
+
+
     & > h2 {
       display: none;
     }
@@ -80,6 +90,10 @@ form.wufoo {
       margin: 0 auto;
       p {
         margin: 0 auto;
+        @include mobile-only {
+          font-size: 80%;
+          padding: 0 1em;
+        }
         span {
           color: #f472b1;
           font-weight: 500;

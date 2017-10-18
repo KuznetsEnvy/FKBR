@@ -1000,7 +1000,6 @@ $('a[rel=lightbox]').colorbox({ minWidth: '200', maxWidth: '96%', maxHeight: '96
             }
         }
     };
-
     function showPopUp() {
       var popup_refresh = getUrlParameter('popup_refresh');
       if (popup_refresh) {
@@ -1010,21 +1009,21 @@ $('a[rel=lightbox]').colorbox({ minWidth: '200', maxWidth: '96%', maxHeight: '96
       var popup_showed = Cookies.get('popup_showed');
 
       if(popup_showed != 'true') {
-          $('.popup-overlay').css({'display': 'flex'});
+          $('.wufoo-popup-overlay').css({'display': 'flex'});
           $('body').addClass('body-no-scroll');
           Cookies.set('popup_showed', 'true');
       }
     }
     function hidePopUp(e) {
-      $('.popup-overlay').hide();
+      $('.wufoo-popup-overlay').hide();
       $('body').removeClass('body-no-scroll');
     }
     function showPopUpConfirmation() {
-      $('.popup .popup-header').hide();
-      $('.popup .popup-confirm-header').show();
-      $('.popup .popup-message').hide();
-      $('.popup .bottom').hide();
-      $('.popup .top').css({'display': 'flex'});
+      $('.wufoo-popup .popup-header').hide();
+      $('.wufoo-popup .popup-confirm-header').show();
+      $('.wufoo-popup .popup-message').hide();
+      $('.wufoo-popup .bottom').hide();
+      $('.wufoo-popup .top').css({'display': 'flex'});
 
       if(typeof(ga) == 'function'){
           ga('send', 'event', 'Popup', 'Email Signup', 'Email Subscriber');
@@ -1045,18 +1044,11 @@ $('a[rel=lightbox]').colorbox({ minWidth: '200', maxWidth: '96%', maxHeight: '96
         var popUpForm = $('#mc-embedded-subscribe-form');
         if(popUpForm.length) {
           popUpForm.on('submit', showPopUpConfirmation);
-
-          /*$('#mce-success-response').on("DOMSubtreeModified",function() {
-              var self = $(this);
-              if (self.html().indexOf('confirm your email') > -1) {
-                self.html('Hello world!');
-              }
-          });*/
         }
         $('.popup-close-btn').each(function() {
             $(this).on('click', hidePopUp);
         });
-        $('.popup-overlay').on('click', function(e){
+        $('.wufoo-popup-overlay').on('click', function(e){
             if (e.target !== this)
                 return;
             hidePopUp();
