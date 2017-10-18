@@ -1061,7 +1061,7 @@ $('a[rel=lightbox]').colorbox({ minWidth: '200', maxWidth: '96%', maxHeight: '96
             hidePopUp();
         });
 
-        var popUpTimeoutId = window.setTimeout(showPopUp, 10000);
+        var popUpTimeoutId = window.setTimeout(showPopUp, 5000);
 
     }); // $(window).on('load'...)
 
@@ -1079,9 +1079,12 @@ $('.js-close-pre_header').click(function(){
         // Sorry! No Web Storage support..
     }
 });
-if (sessionStorage.getItem('bannerFreeShipingCloser') === 'true' ) {
-    $('#pre_header').hide();
-} else {
-    $('#pre_header').show();
-    $('#header').css('padding-top', $('#pre_header').outerHeight());
+var preHeaderInit = function() {
+    if (sessionStorage.getItem('bannerFreeShipingCloser') === 'true' ) {
+        $('#pre_header').hide();
+    } else {
+        $('#pre_header').show();
+        $('#header').css('padding-top', $('#pre_header').outerHeight());
+    }
 }
+window.addEventListener('load', preHeaderInit);
