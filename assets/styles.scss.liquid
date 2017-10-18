@@ -9413,7 +9413,7 @@ button.buy-now.black:hover {
 
   @media #{$mobile} {
     width: 100%;
-    height: 70%;
+    height: 80%;
   }
   @include desktop {
     padding: 2vw 3vw;
@@ -9583,6 +9583,9 @@ button.buy-now.black:hover {
   p {
     margin: 0;
     line-height: normal;
+    @include desktop {
+      padding: 0.5em;
+    }
 
     strong {
       white-space: nowrap;
@@ -9634,4 +9637,8 @@ button.buy-now.black:hover {
       }
     }
   }
+}
+
+.body-no-scroll {
+  overflow: hidden;
 }

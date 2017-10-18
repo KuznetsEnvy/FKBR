@@ -1,3 +1,20 @@
+//region Variables
+$mobile: "screen and (max-width: 767px)";
+$desktop: "screen and (min-width: 768px)";
+$tablet-width: 768px;
+//endregion
+//region Mixins
+@mixin mobile-only {
+  @media (max-width: #{$tablet-width - 1px}) {
+    @content;
+  }
+}
+@mixin desktop {
+  @media (min-width: #{$tablet-width}) {
+    @content;
+  }
+}
+//endregion
 //region Fonts
 @font-face {
   font-family: "Have Heart One";
@@ -27,6 +44,8 @@
 * {
   box-sizing: border-box;
 }
+html {height: 100%;}
+body {height: 100%; display: flex; align-items: center;}
 .wufoo-form-container {
   height: 100%;
 }
@@ -44,8 +63,12 @@ form.wufoo {
     color: #58c8b2 !important;
     font-family: "Have Heart One", sans-serif !important;
     font-size: 68px !important;
-    margin: 0.3em 0 !important;
+    margin: 0.3em !important;
     padding: 0 !important;
+
+    @include desktop {
+      margin: 0.3em 0 !important;
+    }
   }
 
   header.info {
@@ -100,5 +123,9 @@ form.wufoo {
     @media (max-width: 767px) {
       width: 80vw;
     }
+  }
+
+  label.desc {
+    display: none;
   }
 }
