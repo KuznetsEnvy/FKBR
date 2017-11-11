@@ -1074,10 +1074,12 @@ $('.js-close-pre_header').click(function(){
 });
 var preHeaderInit = function() {
     if (sessionStorage.getItem('bannerFreeShipingCloser') === 'true' ) {
-        $('#pre_header').hide();
+      $('#pre_header').hide();
     } else {
+      if(!$('body.template-index').length){
         $('#pre_header').show();
         $('#header').css('padding-top', $('#pre_header').outerHeight());
+      }
     }
 }
 window.addEventListener('load', preHeaderInit);

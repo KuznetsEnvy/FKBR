@@ -2,6 +2,8 @@
 $mobile: "screen and (max-width: 767px)";
 $desktop: "screen and (min-width: 768px)";
 $tablet-width: 768px;
+
+$padding-mobile: 3vw;
 //endregion
 //region Mixins
 @mixin mobile-only {
@@ -8529,7 +8531,6 @@ button.buy-now.black:hover {
 }
 
 .br-launch-banner-text {
-  background-color: white;
   position: absolute;
   top: 0;
   left: 14vw;
@@ -8541,41 +8542,41 @@ button.buy-now.black:hover {
   align-items: center;
   padding-bottom: 6vw;
   text-align: center;
+  background-color: red;
+  color: white;
+  z-index: 2;
+  font-size: 4.8vw;
+  font-family: "Brandon Grotesque";
+
+  @include desktop {
+    font-size: 1.11vw;
+    position: absolute;
+    top: 0;
+    left: 24%;
+    width: 54%;
+    padding: 4em;
+  }
+  & > * {
+    cursor: default;
+  }
 
   mark {
     font-family: "Have Heart One";
     font-size: 11.8vw;
     line-height: 1.6em;
-    color: #ff4242;
+
+    @include desktop {
+      font-size: 4.5vw;
+      line-height: normal;
+      padding: 0 0 0.3em;
+    }
   }
-  span {
-    font-family: "Brandon Grotesque";
+  span, small {
     font-weight: 700;
-    font-size: 4.8vw;
     text-transform: uppercase;
 
     em {
-      color: #ff4242;
       font-style: normal;
-    }
-  }
-
-  @media #{$desktop} {
-    position: absolute;
-    top: 0;
-    left: 58%;
-    width: 20vw;
-    padding: 1vw;
-
-    mark {
-      font-size: 4.5vw;
-      line-height: normal;
-    }
-
-    span {
-      font-size: 1.5vw;
-      cursor: default;
-      padding: 0.5em 0;
     }
   }
 }
@@ -9590,6 +9591,16 @@ button.buy-now.black:hover {
     strong {
       white-space: nowrap;
     }
+
+    small {
+      display:block;
+      font-size: 80%;
+
+      @include desktop {
+        display: inline-block;
+        font-size: inherit;
+      }
+    }
   }
   .btn-close {
     position: absolute;
@@ -9641,4 +9652,11 @@ button.buy-now.black:hover {
 
 .body-no-scroll {
   overflow: hidden;
+}
+
+.page-support {
+  .container {
+    padding: 0 $padding-mobile;
+
+  }
 }

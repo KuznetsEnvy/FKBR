@@ -5,7 +5,7 @@
 
       <p class="support-title">{{ 'pages.support.here_to_help_html' | t }}</p>
       <div class="main-support">
-        <ul>
+        <ul class="clearfix">
           <li>
             <div class="supprt-block"><img src="{{ 'trackorder.png' | asset_url }}"/>
               <h2><a href="{{ settings.title_url1 }}">{{ 'pages.support.track_order' | t }}</a></h2>
@@ -13,7 +13,7 @@
           </li>
           <li>
             <div class="supprt-block"><img src="{{ 'email.png' | asset_url }}"/>
-              <h2><a href="{{ settings.title_url2 }}">{{ 'pages.support.email_support' | t }}</a></h2>
+              <h2><a href="{{ settings.title_url2 }}" target="_blank" rel="noopener nofollow">{{ 'pages.support.email_support' | t }}</a></h2>
               <p class="supp-disc">{{ settings.dics_text1 }}</p>
             </div>
           </li>

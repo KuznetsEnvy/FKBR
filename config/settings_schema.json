@@ -1,36 +1,19 @@
 [
   {
-    "name": "theme_info",
+    "name": "Marketing",
     "settings": [
       {
-        "type": "header",
-        "content": "Canopy Theme"
-      },
-      {
-        "type": "paragraph",
-        "content": "v1.0.10"
-      },
-      {
-        "type": "paragraph",
-        "content": "Thank you for choosing the Canopy theme by Clean Themes."
-      },
-      {
-        "type": "paragraph",
-        "content": "[Theme documentation](http:\/\/cleanthemes.co.uk\/canopy\/)"
-      },
-      {
-        "type": "paragraph",
-        "content": "Need help? Contact us: [shopify@cleanthemes.co.uk](mailto:shopify@cleanthemes.co.uk)"
+        "type": "text",
+        "id": "max_discount",
+        "label": "Maximum discount, %",
+        "default": "70",
+        "info": "Only used in theme templates"
       }
     ]
   },
   {
     "name": "Colours",
     "settings": [
-      {
-        "type": "paragraph",
-        "content": "[Need help? →](http:\/\/cleanthemes.co.uk\/collections\/canopy-theme-settings\/products\/canopy-settings-colours)"
-      },
       {
         "type": "header",
         "content": "Colours"
