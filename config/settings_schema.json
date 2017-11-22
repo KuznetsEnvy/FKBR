@@ -8,6 +8,13 @@
         "label": "Maximum discount, %",
         "default": "70",
         "info": "Only used in theme templates"
+      },
+      {
+        "type": "text",
+        "id": "shipping_date",
+        "label": "Shipping date",
+        "default": "January 14, 2018",
+        "info": "Should have proper format like this: January 01, 2018"
       }
     ]
   },

@@ -391,7 +391,6 @@ $(function($){
 
 
   /// Side-cart quantities
-
   $(document).on('change', '#cart-summary .cart-summary-item input', function(){
     var $statusDivs = $(this).closest('.cart-summary-item').add('#cart-summary').addClass('updating');
     var quantities = [];
@@ -1076,7 +1075,7 @@ var preHeaderInit = function() {
     if (sessionStorage.getItem('bannerFreeShipingCloser') === 'true' ) {
       $('#pre_header').hide();
     } else {
-      if(!$('body.template-index').length){
+      if(!$('body.template-index').length && !$('body.template-cart').length){
         $('#pre_header').show();
         $('#header').css('padding-top', $('#pre_header').outerHeight());
       }

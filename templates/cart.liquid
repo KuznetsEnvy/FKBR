@@ -1,5 +1,6 @@
-{% assign shipping_date = 1512691200 %}{% comment %}1512691200 - 8th December 2017 00:00:00{% endcomment %}
+{% assign shipping_date = settings.shipping_date | date: '%s' %}
 {% assign now = 'now' | date: '%s' %}
+
 <div class="explanation">
   <img src="{{ 'transparent_pixel.png' | asset_url | split:"?" | first }}" data-src="{{ 'icon-white-megaphone.svg' | asset_url | split:'?' | first }}" /><em>Pedido Antecipado</em><span> - <span class="red">envio em {{ shipping_date | minus: now | divided_by: 86400 }} dias</span> - até {{ settings.max_discount }}% de desconto</span>
 </div>

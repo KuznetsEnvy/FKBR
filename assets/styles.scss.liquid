@@ -5,6 +5,12 @@ $tablet-width: 768px;
 
 $padding-mobile: 3vw;
 //endregion
+//region Colour variables
+$green-haze: #00a552;
+$fun-green: #00793c;
+$turbo: #fff100;
+//endregion
+
 //region Mixins
 @mixin mobile-only {
   @media (max-width: #{$tablet-width - 1px}) {
@@ -1468,7 +1474,7 @@ input.micro {
   height: auto;
   width: 2em;
   padding: 4px;
-  text-align: center
+  text-align: center;
 }
 
 input[type=checkbox] {
@@ -8530,6 +8536,132 @@ button.buy-now.black:hover {
   }
 }
 
+.br-banner-oversell-text {
+  position: absolute;
+  top: 4%;
+  left: 4%;
+  width: 92%;
+  height: 92%;
+  letter-spacing: 0.04em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  z-index: 2;
+  font-size: 4.8vw;
+  font-family: "Brandon Grotesque";
+  text-transform: uppercase;
+
+  @include desktop {
+    top: 0;
+    left: 22%;
+    width: 56%;
+    height: 103.8%
+  }
+
+  .green {
+    background-color: $green-haze;
+    color: white;
+    height: 32%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    @include desktop {
+      height: 48%;
+    }
+
+    .big {
+      font-size: 6.66vw;
+      letter-spacing: 0.05em;
+      line-height: 144%;
+
+      @include desktop {
+        font-family: "Have Heart One";
+        font-size: 4.87vw;
+        text-transform: none;
+        line-height: 72%;
+      }
+
+      @include mobile-only {
+        mark {
+          font-family: "Have Heart One";
+          font-size: 10.9vw;
+        }
+      }
+    }
+    .small {
+      font-size: 5.14vw;
+      line-height: 282%;
+      letter-spacing: 0.2em;
+      font-weight: 500;
+      @include desktop {
+        font-size: 1.46vw;
+      }
+
+      span {
+        color: $turbo;
+      }
+    }
+  }
+  .yellow {
+    height: 68%;
+    width: 100%;
+    color: black;
+    background-color: $turbo;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    font-weight: 500;
+    padding: 0 6%;
+    @include desktop {
+      height: 52%;
+      justify-content: center;
+    }
+
+    .lote1 {
+      font-size: 4.26vw;
+      margin-top: 1em;
+      @include desktop {
+        font-size: 0.9vw;
+      }
+    }
+    .lote2 {
+      font-size: 5.33vw;
+      color: $fun-green;
+      @include desktop {
+        font-size: 1.25vw;
+      }
+    }
+    .envios {
+      font-family: "Have Heart One";
+      font-size: 14.53vw;
+      text-transform: none;
+      @include desktop {
+        font-size: 3.62vw;
+        margin-top: 0.5em;
+      }
+
+      mark {
+        color: $fun-green;
+      }
+    }
+    .anchor {
+      background-color: black;
+      color: white;
+      font-size: 4.75vw;
+      padding: 1.1em 3em;
+      align-self: center;
+      border-radius: 0.6em;
+      margin-bottom: 0.5em;
+      @include desktop {
+        font-size: 1.11vw;
+      }
+    }
+  }
+}
 .br-launch-banner-text {
   position: absolute;
   top: 0;
@@ -9566,7 +9698,8 @@ button.buy-now.black:hover {
   z-index: 9;
   height: auto;
   width: 100%;
-  background: rgb(40, 171, 171);
+  /*background: rgb(40, 171, 171);*/
+  background-color: $green-haze;
   color: white;
   text-align: center;
   overflow: hidden;
