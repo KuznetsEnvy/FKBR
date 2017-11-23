@@ -106,8 +106,18 @@
     }, 1000);
 </script>
 {% endcomment %}
+<a name="emojis"></a>
+<a class="emojis-3-2" href="https://br.floatiekings.com/products/emoji-compre-2-e-leve-3">
+  <picture>
+    <source media="(min-width: 1440px)" srcset="{{ 'Banner_Emoji_1920.png' | asset_url | split:"?" | first }}">
+    <source media="(min-width: 1024px)" srcset="{{ 'Banner_Emoji_1440.png' | asset_url | split:"?" | first }}">
+    <source media="(min-width: 768px)" srcset="{{ 'Banner_Emoji_1024.png' | asset_url | split:"?" | first }}">
+    <source media="(min-width: 414px)" srcset="{{ 'Banner_Emoji_750.png' | asset_url }}">
+    <source media="(min-width: 200px)" srcset="{{ 'Banner_Emoji_375.png' | asset_url }}">
+    <img src="{{ 'Banner_Emoji_1440.png' | asset_url | split:"?" | first }}" alt="">
+  </picture>
+</a>
 <section class="section products-section product-list">
-  <a name="emojis"></a>
   <div class="container">
     <div class="row grid">
       {% for product in collections['emojis'].products limit: settings[max_count_setting_id] limit: 3 %}
