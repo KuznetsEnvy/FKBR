@@ -199,6 +199,44 @@
 </div>
 
 
+<!-- Aaron Kai banner -->
+<section id="aron-kai" class="border-top section bottom-banner">
+  <div class="container">
+    <div class="banner">
+      <img src="{{ 'aaronKai-banner-BR.png' | asset_url | split:"?" | first }}" alt="Home AaronKai Banner" />
+    </div>
+  </div>
+</section>
+
+<section class="section products-section product-list">
+  <div class="container">
+    <div class="row grid">
+      {% for product in collections['aaron-kai'].products limit: 3 %}
+        {% include 'product-block' %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- Badwood banner -->
+<section class="border-top section bottom-banner">
+  <div class="container">
+    <div class="banner">
+      <img src="{{ 'bottom-banner_new.png' | asset_url | split:"?" | first }}" alt="Home Banner" />
+    </div>
+  </div>
+</section>
+
+<section class="section products-section product-list">
+  <div class="container">
+    <div class="row grid">
+      {% for product in collections['ski-mask'].products limit: 1 %}
+        {% include 'product-block' %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
 <section id="insta">
   <h4 class="center">{{ 'layout.misc.summer_story_html' | t }}</h4>
   <div class="header">
