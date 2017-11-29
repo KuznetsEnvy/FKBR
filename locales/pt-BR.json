@@ -97,6 +97,17 @@
       "shop_now": "Compre já"
     }
   },
+  "popups": {
+    "hello": {
+      "hello_gorgerous": "Olá!",
+      "want_invites_html": "Gostaria de receber <span>ofertas especiais<\/span> e convites para eventos da Floatie Kings?",
+      "your_email": "E-mail",
+      "submit": "Eu quero!",
+      "no_thanks": "Não, obrigado, não gosto de me divertir e nem quero receber ofertas incríveis",
+      "welcome_floatlife": "Bem vindo à vida flutuante!",
+      "email_added": "Seu email foi adicionado à nossa lista para receber convites especiais e ofertas."
+    }
+  },
   "products": {
     "product": {
       "product_unavailable": "Produto Indisponível",
