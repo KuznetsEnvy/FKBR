@@ -1,5 +1,7 @@
 {
   "current": {
+    "max_discount": "50",
+    "shipping_date": "January 12, 2018",
     "site_bg_col": "#ffffff",
     "site_border_col": "#ffffff",
     "body_text_col": "#000000",

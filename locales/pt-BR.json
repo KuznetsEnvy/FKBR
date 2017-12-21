@@ -111,7 +111,7 @@
   "products": {
     "product": {
       "product_unavailable": "Produto Indisponível",
-      "product_unavailable_html": "Avise-me quando voltar ao estoque",
+      "product_unavailable_html": "Indisponível - me avise quando voltar ao estoque",
       "quantity": "Quantidade",
       "add_to_cart_html": "Colocar no carrinho",
       "backorder": "está atrasado. Enviaremos pra você em 10-15 dias",
