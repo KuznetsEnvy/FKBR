@@ -157,14 +157,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 </script>
 
-<div id="pre_header" class="top-prebar js-notification-free" style="display: none;">
-  <button class="btn-close js-close-pre_header"><div class="close"></div></button>
-  <div class="row">
-    <p>
-      2º lote de Pedido Antecipado - <strong>Envios em {{ shipping_date | minus: now | divided_by: 86400 }} dias</strong> - até {{ settings.max_discount }}% de desconto!
-    </p>
-  </div>
-</div>
 <div id="header" class="cart">
   {% comment %}
   <div class="secure-payment"><span>{{ 'layout.header.secure_payment_html' | t }}</span><img src="{{ 'icon-paypal.png' | asset_url | split:'?' | first }}" alt="PayPal secure payment" /></div>
