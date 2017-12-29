@@ -8556,34 +8556,36 @@ button.buy-now.black:hover {
   text-transform: uppercase;
 
   @include desktop {
-    top: 0;
+    top: 7.5%;
     left: 22%;
     width: 56%;
-    height: 103.8%
+    height: 82.5%;
   }
 
   .green {
     background-color: $green-haze;
     color: white;
-    height: 32%;
+    height: 60%;
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     @include desktop {
-      height: 48%;
+      height: 100%;
     }
 
     .big {
       font-size: 6.66vw;
-      letter-spacing: 0.05em;
+      letter-spacing: 0.01em;
       line-height: 144%;
+      margin-bottom: 4vw;
 
       @include desktop {
         font-family: "Have Heart One";
-        font-size: 4.87vw;
+        font-size: 4.86vw;
         text-transform: none;
         line-height: 72%;
+        margin-bottom: 2vw;
       }
 
       @include mobile-only {
@@ -8598,17 +8600,40 @@ button.buy-now.black:hover {
       line-height: 282%;
       letter-spacing: 0.2em;
       font-weight: 500;
+      margin-top: 2vw;
+
       @include desktop {
         font-size: 1.46vw;
+        margin-top: 1.5vw;
       }
 
-      span {
+      .mark {
         color: $turbo;
       }
+
+      @include desktop {
+        .underline-swash {
+          position: relative;
+
+          &:after {
+            content: ' ';
+            width: 3.5em;
+            height: 1em;
+            position: absolute;
+            right: 0.8em;
+            bottom: -60%;
+            background-image: url({{ 'br-launch-swash.png' | asset_url | split: '?' | first }});
+            background-size: contain;
+            background-position: center center;
+            background-repeat: no-repeat;
+          }
+        }
+      }
+
     }
   }
   .yellow {
-    height: 68%;
+    height: 34%;
     width: 100%;
     color: black;
     background-color: $turbo;
@@ -8618,7 +8643,7 @@ button.buy-now.black:hover {
     font-weight: 500;
     padding: 0 6%;
     @include desktop {
-      height: 52%;
+      height: 3vw;
       justify-content: center;
     }
 

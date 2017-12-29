@@ -119,9 +119,6 @@
 </head>
 <body class="template-{{ template | split: '.' | first }} {{ template | split: '.' | join: '-' }} {{ page_title | handle }}">
 
-{% assign shipping_date = settings.shipping_date | date: '%s' %}
-{% assign now = 'now' | date: '%s' %}
-
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-53Z4XRB"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -193,60 +190,26 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
             <div id="bicolorBanner" class="banner-index" style="{% if template contains 'product' %}display:none;{% endif %}">
               <picture>
-                <source media="(min-width: 1440px)" srcset="{{ 'BR-launch-bg3-1920.png' | asset_url | split:"?" | first }}">
-                <source media="(min-width: 1024px)" srcset="{{ 'BR-launch-bg3-1440.png' | asset_url | split:"?" | first }}">
-                <source media="(min-width: 768px)" srcset="{{ 'BR-launch-bg3-1024.png' | asset_url | split:"?" | first }}">
+                <source media="(min-width: 1440px)" srcset="{{ 'br-launch-bg4-1920.png' | asset_url | split:"?" | first }}">
+                <source media="(min-width: 1024px)" srcset="{{ 'br-launch-bg4-1440.png' | asset_url | split:"?" | first }}">
+                <source media="(min-width: 768px)" srcset="{{ 'br-launch-bg4-1024.png' | asset_url | split:"?" | first }}">
                 <source media="(min-width: 414px)" srcset="{{ 'BR-launch-bg3-750.png' | asset_url }}">
                 <source media="(min-width: 200px)" srcset="{{ 'BR-launch-bg3-375.png' | asset_url }}">
-                <img src="{{ 'BR-launch-bg3-1440.png' | asset_url | split:"?" | first }}" alt="">
+                <img src="{{ 'br-launch-bg4-1440.png' | asset_url | split:"?" | first }}" alt="">
               </picture>
 
               <div class="br-banner-oversell-text">
                 <div class="green">
-                  <div class="big">Mais de <mark>10,000</mark> boias vendidas em 30 dias</div>
-                  <div class="small"><span>Obrigado</span> Brasil!</div>
+                  <div class="big">Mais de <mark>14,000</mark> boias vendidas</div>
+                  <div class="yellow">
+                    <div class="lote2">1º e 2º lote de pedido antecipado 100% vendido</div>
+                  </div>
+                  <div class="small"><span class="mark">Obrigado</span> <span class="underline-swash">Brasil!</span></div>
                 </div>
-                <div class="yellow">
-                  <div class="lote1">1º lote de pedido antecipado 100% vendido</div>
-                  <div class="lote2">2º lote de pedido antecipado - quantidades<br>super limitadas!</div>
-                  <div class="envios">Envios em <mark>{{ shipping_date | minus: now | divided_by: 86400 }}</mark> dias</div>
-                  <a class="anchor" href="#shop-now">Compre agora</a>
-                </div>
+
               </div>
 
             </div>
-
-            {% comment %}
-            <div id="bicolorBanner" class="banner-index" style="display:none;">
-              <picture>
-                <source media="(min-width: 1440px)" srcset="{{ 'BR-launch-desktop-bg2-1920.png' | asset_url | split:"?" | first }}">
-                <source media="(min-width: 1024px)" srcset="{{ 'BR-launch-desktop-bg2-1440.png' | asset_url | split:"?" | first }}">
-                <source media="(min-width: 768px)" srcset="{{ 'BR-launch-desktop-bg2-1024.png' | asset_url | split:"?" | first }}">
-                <source media="(min-width: 414px)" srcset="{{ 'BR-launch-mobile-bg2-750.png' | asset_url }}">
-                <source media="(min-width: 200px)" srcset="{{ 'BR-launch-mobile-bg2-375.png' | asset_url }}">
-                <img src="{{ 'BR-launch-desktop-bg2-1440.png' | asset_url | split:"?" | first }}" alt="">
-              </picture>
-
-              <div class="br-launch-banner-text">
-                <mark>Lançamento Brasil</mark>
-                <span>Pedidos Antecipados</span>
-                <small class="hidden-mobile">Quanto mais perto da entrega, menor o desconto</small>
-                <span><span id="banner-index-days-counter">{{ shipping_date | minus: now | divided_by: 86400 }}</span> dias para a entrega – até <em>{{ settings.max_discount }}%</em> de desconto</span>
-              </div>
-            </div>
-            {% endcomment %}
-
-            {% comment %}
-            {% if settings.shipping-banner-enable %}
-              {% unless template contains 'product' %}
-              <div class="shipping-banner">
-                <div class="nn-secondary-middle">{{ 'cart.shipping.shipping-banner_html' | t }}
-                  <nobr>{{ settings.free_shipping_from | money }}</nobr>
-                </div>
-              </div>
-              {% endunless %}
-            {% endif %}
-            {% endcomment %}
           {% endif %}
 
         {% else %}
