@@ -106,6 +106,12 @@
       "no_thanks": "Não, obrigado, não gosto de me divertir e muito menos de descontos especiais",
       "welcome_floatlife": "Bem vindo à vida flutuante!",
       "email_added": "Seu email foi adicionado à nossa lista para receber convites especiais e ofertas."
+    },
+    "stock": {
+      "will_notify": "We will notify you when product is available",
+      "submit": "Submit",
+      "your_email": "Email",
+      "email_added": "Seu email foi adicionado à nossa lista."
     }
   },
   "products": {

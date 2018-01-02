@@ -95,7 +95,9 @@
   {{ 'jquery.fancybox.css' | asset_url | split:'?' | first | stylesheet_tag }}
   {% endcomment %}
 
+  {% comment %}
   <script id="jquery_fancybox" src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js" defer></script>
+  {% endcomment %}
 
   <!-- Pinterest Pixel Code -->
   <img height="1" width="1" style="display:none;" alt="" src="https://ct.pinterest.com/?tid=8HcMxz0bQxu&value=0.00&quantity=1"/>
@@ -377,21 +379,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     ga('send', 'pageview');
 </script>
 
-<script type="text/javascript">
-    document.getElementById('jquery_fancybox').addEventListener('load', function () {
-        $(document).ready(function () {
-            $("#various1").fancybox({
-                'width': '502px',
-                'height': '340px',
-                'titlePosition': 'inside',
-                'transitionIn': 'none',
-                'transitionOut': 'none',
-                'type': 'iframe'
-            });
-        });
-    });
-</script>
-
 <script src="https://use.fontawesome.com/791a439b99.js"></script>
 
 {% if gfonts != '' %}
@@ -433,7 +420,11 @@ Remarketing tags may not be associated with personally identifiable information 
   </div>
 </noscript>
 
-{% include 'popup-hello' %}
+{% if template contains 'product' %}
+  {% include 'popup-stock' %}
+{% else %}
+  {% include 'popup-hello' %}
+{% endif %}
 
 </body>
 </html>
