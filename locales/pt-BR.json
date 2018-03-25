@@ -134,5 +134,21 @@
     "labels": {
       "sale": "Promoção"
     }
+  },
+  "shopify": {
+    "checkout": {
+      "contact": {
+        "company_label": "CPF",
+        "optional_company_label": "CPF (obrigatório)",
+        "company_placeholder": "CPF",
+        "optional_company_placeholder": "CPF (obrigatório)",
+        "address2_label": "Bairro",
+        "optional_address2_label": "Bairro (obrigatório)",
+        "optional_address2_placeholder": "Bairro (obrigatório)",
+        "address2_placeholder": "Bairro",
+        "address1_label": "Rua + Nº + Complemento",
+        "address1_placeholder": "Rua + Nº + Complemento"
+      }
+    }
   }
 }
