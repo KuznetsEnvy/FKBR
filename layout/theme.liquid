@@ -87,17 +87,6 @@
     <!--{{ 'jquery.elevatezoom.js' | asset_url | script_tag }}-->
     <script id="jquery_elevatezoom" src="{{ 'jquery.elevatezoom.js' | asset_url }}" defer></script>
   {% endif %}
-  {% comment %}{{ 'parallax.js' | asset_url | script_tag }}{% endcomment %}
-
-  {% comment %}
-  <!--{{ 'jquery.fancybox.js' | asset_url | script_tag }}-->
-  <script src="{{ 'jquery.fancybox.js' | asset_url | split:'?' | first }}" defer></script>
-  {{ 'jquery.fancybox.css' | asset_url | split:'?' | first | stylesheet_tag }}
-  {% endcomment %}
-
-  {% comment %}
-  <script id="jquery_fancybox" src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js" defer></script>
-  {% endcomment %}
 
   <!-- Pinterest Pixel Code -->
   <img height="1" width="1" style="display:none;" alt="" src="https://ct.pinterest.com/?tid=8HcMxz0bQxu&value=0.00&quantity=1"/>
@@ -145,39 +134,42 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     adaptiveHeight: true,
                     autoStart: autostart,
                     pager: autostart,
+                    pagerCustom: '.bx-pager',
                     controls: false,
                     speed: 1000
                 });
             });
-        }()
+        }();
       {% endif %}
     };
-
-
 </script>
 
 <div id="header" class="cart">
-  {% comment %}
-  <div class="secure-payment"><span>{{ 'layout.header.secure_payment_html' | t }}</span><img src="{{ 'icon-paypal.png' | asset_url | split:'?' | first }}" alt="PayPal secure payment" /></div>
-
-  {% if settings.shipping-banner-enable %}
-    {% unless template contains 'product' %}
-    <div class="shipping-banner-top visible-desktop">
-      {{ 'cart.shipping.shipping-banner_html' | t }}
-      <nobr>{{ settings.free_shipping_from | money }}</nobr>
-    </div>
-    {% endunless %}
-  {% endif %}
-  {% endcomment %}
-
   <div class="page-header">
-    <div><!-- This div is needed for flexbox alignment --></div>
     <a class="text-logo" href="{{ shop.url }}"><strong>Floatie</strong> Kings</a>
+    <div class="top-nav">
+      <div id="nav-icon3" class="visible-mobile hidden">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <nav class="visible-desktop">
+        <a href="javascript:void(0)" class="hidden">Shop</a>
+        <a href="javascript:void(0)" class="hidden">Our story</a>
+        <a href="javascript:void(0)" class="hidden invoke-popup-hello">Join the family</a>
+      </nav>
+    </div>
     <div class="cart-wrap">
-      <a class="current-cart cart-count {% if template != 'cart' %}toggle-cart-summary{% endif %}">{{ cart.item_count }}</a>
+      <a class="current-cart {% if template != 'cart' %}toggle-cart-summary{% endif %}">
+        <svg id="icon-cart" data-name="Cart icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 242.3 242.65">
+          <title>icon-cart</title>
+          <path class="cls-1" d="M25.65,244.65A23.55,23.55,0,0,1,8.2,236.9a23.1,23.1,0,0,1-5.78-17.39L18.17,74.21a7.73,7.73,0,0,1,8-7.12H51.41l.19-1.79C55.33,29.21,86.35,2,123.75,2a73.32,73.32,0,0,1,48.83,18.37,68.32,68.32,0,0,1,22.92,44.9l.17,1.82h25.18a8.18,8.18,0,0,1,8,7.12l15.76,145.38a23.05,23.05,0,0,1-5.79,17.32l-.07.08a21.65,21.65,0,0,1-16.82,7.66Zm-6.73-23.33v.11a6.51,6.51,0,0,0,6.73,6.73H221.91a6.6,6.6,0,0,0,6.78-6.69v-.13L213.79,83.52H195.85v18.81a8,8,0,0,1-8,8,8.53,8.53,0,0,1-8.52-8.52V83.52H68.29v18.81a8.52,8.52,0,0,1-17,0V83.52H33.82ZM123.75,17.93c-28.28,0-52,20.17-55.14,46.92l-.26,2.23H179.16l-.27-2.24a52.15,52.15,0,0,0-18.14-33.29A56.84,56.84,0,0,0,123.75,17.93Z" transform="translate(-2.35 -2)" />
+        </svg>
+        <span class="cart-count">{{ cart.item_count }}</span>
+      </a>
     </div>
   </div>
-
   {% include 'cart-summary' %}
 </div>
 
@@ -188,31 +180,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
         {% if template contains 'index' or template contains 'product' %}
 
-          {% if settings.home_show_slideshow %}
-
-            <div id="bicolorBanner" class="banner-index" style="{% if template contains 'product' %}display:none;{% endif %}">
-              <picture>
-                <source media="(min-width: 1440px)" srcset="{{ 'br-launch-bg4-1920.png' | asset_url | split:"?" | first }}">
-                <source media="(min-width: 1024px)" srcset="{{ 'br-launch-bg4-1440.png' | asset_url | split:"?" | first }}">
-                <source media="(min-width: 768px)" srcset="{{ 'br-launch-bg4-1024.png' | asset_url | split:"?" | first }}">
-                <source media="(min-width: 414px)" srcset="{{ 'BR-launch-bg3-750.png' | asset_url }}">
-                <source media="(min-width: 200px)" srcset="{{ 'BR-launch-bg3-375.png' | asset_url }}">
-                <img src="{{ 'br-launch-bg4-1440.png' | asset_url | split:"?" | first }}" alt="">
-              </picture>
-
-              <div class="br-banner-oversell-text">
-                <div class="green">
-                  <div class="big">Mais de <mark>14,000</mark> boias vendidas</div>
-                  <div class="yellow">
-                    <div class="lote2">1º e 2º lote de pedido antecipado 100% vendido</div>
-                  </div>
-                  <div class="small"><span class="mark">Obrigado</span> <span class="underline-swash">Brasil!</span></div>
-                </div>
-
-              </div>
-
-            </div>
-          {% endif %}
+          <div class="shipping-banner-top">
+            {{ 'cart.shipping.shipping-banner_html' | t }} <nobr>{{ settings.free_shipping_from | money }}</nobr>
+          </div>
 
         {% else %}
 

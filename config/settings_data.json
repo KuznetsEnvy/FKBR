@@ -210,7 +210,7 @@
     "cart_product1": true,
     "best_deal_icon1": false,
     "product-collection-title1": "<strong>Bombado<\/strong>",
-    "featured-products-product1": "super-pump-2000",
+    "featured-products-product1": "pump-2000-deal",
     "cart_product2": false,
     "best_deal_icon2": true,
     "product-collection-title2": "Oferta <strong>maluca<\/strong>",
@@ -470,6 +470,35 @@
     "hide_dividers": false,
     "homepage_feat_img_box": true,
     "hide_nav_home_dividers": false,
+    "sections": {
+      "as-seen-on": {
+        "type": "as-seen-on",
+        "blocks": {
+          "1522700666117": {
+            "type": "item",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/globo-logo-4.png"
+            }
+          },
+          "1522700726770": {
+            "type": "item",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/vogue-logo-4.png"
+            }
+          }
+        },
+        "block_order": [
+          "1522700666117",
+          "1522700726770"
+        ],
+        "settings": {
+          "header": "Como visto na",
+          "quote": "Floatie Kings é o exemplo perfeito de como a procura por um produto se transformou em uma marca!",
+          "style": "font-size:1.5em; font-weight: 500; margin-bottom: 0.5em;",
+          "author": "Revista Vogue"
+        }
+      }
+    },
     "content_for_index": [
 
     ]

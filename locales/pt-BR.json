@@ -26,7 +26,11 @@
     "banners": {
       "memories_last_forever": "Crie memórias para toda a vida",
       "memories_last_forever_html": "<span>Crie memórias<\/span><br \/><em>para toda a vida<\/em>",
-      "bring_best_friend_html": "<span>Traga seu<\/span><br \/><em>melhor amigo<\/em>"
+      "bring_best_friend_html": "<span>Traga seu<\/span><br \/><em>melhor amigo<\/em>",
+      "welcome_to_the_float_life_html": "<span>Bem vindo à<\/span> <em>Vida Flutuante!<\/em>"
+    },
+    "sections": {
+      "floatie_bestsellers_html": "<span>Floaties <\/span><em>Mais vendidas<\/em>"
     },
     "misc": {
       "summer_story_html": "<nobr>Cada verão tem<\/nobr> <nobr>sua própria história ;)<\/nobr>",
@@ -124,11 +128,13 @@
       "adding_to_cart": "Adicionando ao carrinho...",
       "added_to_cart_btn": "Adicionado",
       "related_title": "Não deixe de conferir esses aqui também",
+      "designed_in_la_html": "<span>Designed<\/span> <span>em Los Angeles<\/span>",
       "hand_made_html": "<span>Feito<\/span> <span>à mão<\/span>",
       "high_quality_html": "<span>Alta<\/span> <span>qualidade<\/span>",
       "durable_materials_html": "<span>Materiais<\/span> <span>duráveis<\/span>",
       "easy_setup_html": "<span>Instalação<\/span> <span>simples<\/span>",
       "secure_checkout_html": "<span>Compra<\/span> <span>segura<\/span>",
+      "double_seam_technology_html": "<span>Double-seam<\/span> <span>technology<\/span>",
       "fast_shipping_html": "<span>Envio<\/span> <span>rápido<\/span>"
     },
     "labels": {

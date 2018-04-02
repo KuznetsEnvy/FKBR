@@ -144,4 +144,132 @@
     color: #fff;
     border: 0px;
   }
+
+  /*region newsletter css */
+  .newsletter-bg {
+    width: 100%;
+    display: block;
+  }
+
+  .newsletter--form {
+    background: #fff;
+    top: calc(50% - 105px);
+    position: absolute;
+    width: 400px;
+    -webkit-box-shadow: 0 10px 00px #00ffff;
+    -moz-box-shadow: 0 10px 00px #00ffff;
+    box-shadow: 15px 15px 0 #00ffff;
+    left: calc(50% - 200px);
+    text-align: center;
+    padding: 15px;
+    font-family: "Brandon Grotesque";
+  }
+
+  .newsletter--form h1 {
+    font-size: 43px;
+    font-family: 'OpenSans-Light';
+    margin-bottom: 10px;
+    padding-bottom: 0;
+  }
+
+  .newsletter--form h1 b {
+    font-family: "Brandon Grotesque";
+  }
+
+  .newsletter--form p {
+    font-size: 20px;
+    letter-spacing: 1.1px;
+    margin-bottom: 15px;
+  }
+
+  .newsletter--form #mail {
+    width: 325px;
+    margin: 0 auto;
+    background: #d5d2d2;
+    border: 2px solid #868686;
+    color: #868686;
+  }
+
+  .newsletter--form small {
+    font-size: 14px;
+    letter-spacing: 0;
+  }
+
+  @media only screen and (max-width: 500px) {
+    .shipping-banner {
+      background-size: 120%;
+      width: 96%;
+      margin-bottom: 20px;
+    }
+  }
+
+  @media only screen and (max-width: 767px) {
+    .newsletter--form {
+      left: calc(50% - 130px);
+      top: 30px;
+      width: 260px;
+    }
+    .newsletter--form h1 {
+      font-family: "OpenSans-Light";
+      font-size: 20px;
+    }
+    .newsletter--form p {
+      font-size: 12px;
+      letter-spacing: 1px;
+    }
+    .fancybox-outer {
+      background: url('mobilepopup.jpg') no-repeat center center;
+      background-size: cover;
+    }
+    .newsletter--form #mail {
+      width: 90%;
+      height: 40px;
+    }
+    #subscribe {
+      height: 40px;
+    }
+    .btn-other .other-data .product-title {
+      width: calc(63% - 10px);
+    }
+    .btn-other.fix .other-data .product-price, .btn-other.fix .other-data .product-title {
+      font-size: 13px !important;
+    }
+    .btn-other .other-data .product-price {
+      width: 16%;
+      text-align: right;
+    }
+    .template-product .product-title-row .product-title {
+      width: 78%;
+    }
+    .cart-items span.description, .cart-items span.quantity, .cart-items span.price {
+      font-size: 11px;
+    }
+    #cartform .border-bottom .half h2 {
+      font-size: 14px;
+    }
+    #subscribe {
+      margin: 0;
+      right: 9px !important;
+    }
+  }
+
+  @media only screen and (max-width: 440px) {
+    .cart-thk {
+      font-size: 14px;
+      padding: 10px 0;
+    }
+  }
+
+  @media only screen and (max-width: 400px) {
+    .shipping-banner {
+      background-size: 150%;
+      width: 96%;
+    }
+  }
+
+  .content iframe {
+    max-width: 100%;
+    min-height: 430px !important;
+  }
+  /*endregion*/
 </style>
