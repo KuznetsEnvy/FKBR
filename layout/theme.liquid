@@ -180,9 +180,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
         {% if template contains 'index' or template contains 'product' %}
 
+          {% comment %}
           <div class="shipping-banner-top">
             {{ 'cart.shipping.shipping-banner_html' | t }} <nobr>{{ settings.free_shipping_from | money }}</nobr>
           </div>
+          {% endcomment %}
 
         {% else %}
 
