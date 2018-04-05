@@ -107,6 +107,7 @@
   {% comment %}
   <script src="//code.jquery.com/ui/1.12.0/jquery-ui.js" defer></script>{% endcomment %}
   <script src="//code.jquery.com/ui/1.12.0/jquery-ui.min.js" defer></script>
+  {% include 'judgeme_core' %}
 </head>
 <body class="template-{{ template | split: '.' | first }} {{ template | split: '.' | join: '-' }} {{ page_title | handle }}">
 
