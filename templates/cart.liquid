@@ -78,15 +78,21 @@
                 <h2 class="cart_total_right">{{ cart.total_price | money }}</h2>
               </div>
 
-              {% if free_shipping_from > c %}
-                <div class="shippingmsg2">
-                  <i class="fa fa-exclamation" aria-hidden="true"></i> {{ 'cart.shipping.almost_there' | t }}
-                </div>
-              {% else %}
-                <div class="shippingmsg2" style="font-size:15px;">
-                  <i class="fa fa-check-circle-o" aria-hidden="true"></i> {{ 'cart.shipping.free_shipping_added' | t }}
-                </div>
-              {% endif %}
+              {% comment %}
+                {% if free_shipping_from > c %}
+                  <div class="shippingmsg2">
+                    <i class="fa fa-exclamation" aria-hidden="true"></i> {{ 'cart.shipping.almost_there' | t }}
+                  </div>
+                {% else %}
+                  <div class="shippingmsg2" style="font-size:15px;">
+                    <i class="fa fa-check-circle-o" aria-hidden="true"></i> {{ 'cart.shipping.free_shipping_added' | t }}
+                  </div>
+                {% endif %}
+              {% endcomment %}
+            </div>
+
+            <div class="column align-center" style="width:100%;margin-bottom: 1rem;">
+              <input style="width:100%" type="submit" id="checkout" name="checkout" value="{{ 'cart.general.checkout' | t }}" />
             </div>
           </div>
         </div>
@@ -95,9 +101,11 @@
           {% include 'cart-page-products' %}
         {% endif %}
 
-        <div class="shipping-banner cart">
-          <div class="nn-secondary-middle">{{ 'cart.shipping.shipping-banner_html' | t }} {{ settings.free_shipping_from | money }}</div>
-        </div>
+        {% comment %}
+          <div class="shipping-banner cart">
+            <div class="nn-secondary-middle">{{ 'cart.shipping.shipping-banner_html' | t }} {{ settings.free_shipping_from | money }}</div>
+          </div>
+        {% endcomment %}
         <div class="border-bottom">
           <div class="row">
             <div class="column align-center" style="width:100%;margin-bottom: 1rem;">

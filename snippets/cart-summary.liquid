@@ -14,13 +14,15 @@
       {% assign dif = free_shipping_from | minus: c | money %}
 
       {% if cart.items.size > 0 %}
-        {% if free_shipping_from > c %}
-          <div class="shipping-banner">
-            <div class="cart-summary-title shippingmsg nn-secondary-middle"> {{ 'cart.shipping.add_for_free_shipping' | t: dif: dif }}</div>
-          </div>
-        {% else %}
-          <h5 class="cart-summary-title shippingmsg"><i class="fa fa-check-circle" aria-hidden="true"></i> {{ 'cart.shipping.got_free_shipping' | t }}</h5>
-        {% endif %}
+        {% comment %}
+          {% if free_shipping_from > c %}
+            <div class="shipping-banner">
+              <div class="cart-summary-title shippingmsg nn-secondary-middle"> {{ 'cart.shipping.add_for_free_shipping' | t: dif: dif }}</div>
+            </div>
+          {% else %}
+            <h5 class="cart-summary-title shippingmsg"><i class="fa fa-check-circle" aria-hidden="true"></i> {{ 'cart.shipping.got_free_shipping' | t }}</h5>
+          {% endif %}
+        {% endcomment %}
         <div class="cart-summary-wrap">
           <div class="cart-summary-item-list ft ftw">
             {% for item in cart.items %}
@@ -48,15 +50,18 @@
           <div class="cart-summary-subtotal">
             {{ 'layout.cart_summary.subtotal' | t }} <span class="amount">{{ cart.total_price | money }}</span>
           </div>
-          {% if free_shipping_from > c %}
-            <div class="cart-summary-title shippingmsg2">
-              <i class="fa fa-exclamation" aria-hidden="true"></i> {{ 'cart.shipping.almost_there' | t }}
-            </div>
-          {% else %}
-            <div class="cart-summary-title shippingmsg2" style="font-size:15px;">
-              <i class="fa fa-check-circle-o" aria-hidden="true"></i> {{ 'cart.shipping.free_shipping_added' | t }}
-            </div>
-          {% endif %}
+
+          {% comment %}
+            {% if free_shipping_from > c %}
+              <div class="cart-summary-title shippingmsg2">
+                <i class="fa fa-exclamation" aria-hidden="true"></i> {{ 'cart.shipping.almost_there' | t }}
+              </div>
+            {% else %}
+              <div class="cart-summary-title shippingmsg2" style="font-size:15px;">
+                <i class="fa fa-check-circle-o" aria-hidden="true"></i> {{ 'cart.shipping.free_shipping_added' | t }}
+              </div>
+            {% endif %}
+          {% endcomment %}
 
           <div class="cart-summary-buttons cf">
             {% if settings.cart_side_onebutton %}
@@ -74,9 +79,11 @@
 
       {% else %}
 
-        <div class="shipping-banner">
-          <div class="cart-summary-title shippingmsg nn-secondary-middle">{{ 'cart.shipping.add_for_free_shipping_html' | t: dif: dif }}</div>
-        </div>
+        {% comment %}
+          <div class="shipping-banner">
+            <div class="cart-summary-title shippingmsg nn-secondary-middle">{{ 'cart.shipping.add_for_free_shipping_html' | t: dif: dif }}</div>
+          </div>
+        {% endcomment %}
         <div class="cart-summary-item-list ft ftw">
           <h5 class="cart-summary-title empty">{{ 'cart.general.empty' | t }}</h5>
         </div>

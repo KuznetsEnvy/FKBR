@@ -5514,7 +5514,8 @@ a#upsellclosebtn {
 
 .main-support ul {
   list-style-type: none;
-  padding: 0
+  padding: 0;
+  text-align: center;
 }
 
 .main-support ul li {
@@ -7771,11 +7772,12 @@ b {
 }
 //endregion
 
-@include desktop {
-  .line-framed {
-    overflow: hidden;
-    text-align: center;
 
+.line-framed {
+  overflow: hidden;
+  text-align: center;
+
+  @include desktop {
     &:before, &:after {
       background-color: #999999;
       content: "";
@@ -7795,6 +7797,7 @@ b {
     }
   }
 }
+
 
 h2.section-header {
   line-height: normal;
@@ -8451,6 +8454,9 @@ h2.section-header {
           img {
             order: 2;
           }
+          .dimensions-info {
+            order: 3;
+          }
         }
         .product-description {
           order: 4;
@@ -8588,6 +8594,27 @@ h2.section-header {
             vertical-align: middle;
           }
         }
+      }
+    }
+
+    .dimensions-info {
+      border: 1px solid black;
+      width: 100%;
+      font-size: 16px;
+      font-weight: 500;
+      text-align: center;
+      padding: 15px 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 2em;
+
+      @include desktop {
+        padding: 15px 4.7em;
+      }
+      span {
+        margin: 0 1em;
+
       }
     }
   }
@@ -9224,7 +9251,7 @@ h2.section-header {
       background-color: rgba(223,223,223,1);
     }
 
-    .container {
+    & > .container {
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -9263,6 +9290,16 @@ h2.section-header {
           @include desktop {
             width: 2.67vw;
           }
+
+        }
+        img.cards-brazil {
+          width: 90vmin;
+          margin: 0 0.3em;
+
+          @include desktop {
+            width: 20vw;
+          }
+
         }
       }
 
@@ -9340,26 +9377,6 @@ h2.section-header {
         }
       }
     }
-  }
-}
-
-.dimensions-info {
-  border: 1px solid black;
-  width: 100%;
-  font-size: 15px;
-  font-weight: 500;
-  text-align: center;
-  padding: 15px 0;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-
-  @include desktop {
-    padding: 15px 4.7em;
-  }
-  span {
-    margin: 0 1em;
-
   }
 }
 

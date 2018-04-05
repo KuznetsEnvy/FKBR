@@ -13,9 +13,11 @@
   </div>
 </div>
 
-<div class="shipping-banner visible-mobile">
-  {{ 'cart.shipping.shipping-banner_html' | t }} <nobr>{{ settings.free_shipping_from | money }}</nobr>
-</div>
+{% comment %}
+  <div class="shipping-banner visible-mobile">
+    {{ 'cart.shipping.shipping-banner_html' | t }} <nobr>{{ settings.free_shipping_from | money }}</nobr>
+  </div>
+{% endcomment %}
 
 <section class="section products-section bestsellers visible-desktop">
   <a name="bestsellers"></a>
