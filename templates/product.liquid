@@ -64,6 +64,7 @@
                 {% assign addon = all_products["super-pump-2000"] %}
                 {% if addon.available %}
                   {% assign counter = counter | plus: 1 %}
+                  <!-- This is the pump product -->
                   {% include 'add-ons-item' %}
                 {% endif %}
               {% endunless %}
@@ -221,15 +222,15 @@
                     <li><span>Manual do Usuário Floatie Kings</span></li>
                   </ul>
                 {% else %}
-                  <span class="heading">THE SuperPump2000 INCLUDES:</span>
+                  <span class="heading">A Superpump2000 inclui:</span>
                   <ul>
-                    <li><span>3 x Nozzle Attachments</span></li>
-                    <li><span>Electric Air Pump</span></li>
-                    <li><span>US / EU Power Compatible</span></li>
+                    <li><span>3 bocais para inflar</span></li>
+                    <li><span>Bomba de ar elétrica 110V</span></li>
+                    <li><span>Compativel com tomadas brasileiras</span></li>
                   </ul>
                 {% endunless %}
               </div>
-              {% if large_text != 'blank' %}<div class="dimensions-info">{{ large_text }}</div>{% endif %}
+              {% if large_text != blank and large_text != 'blank' %}<div class="dimensions-info">{{ large_text }}</div>{% endif %}
             </div>
           {% endif %}
 

@@ -6576,6 +6576,10 @@ only screen and (min-device-pixel-ratio: 1.5) {
       font-size: 1.66667em;
     }
   }
+
+  .jdgm-preview-badge {
+    text-align: center;
+  }
 }
 
 .cart-products {
@@ -7898,6 +7902,30 @@ h2.section-header {
 //endregion
 
 
+/*region Judge.me reviews custom CSS*/
+
+
+/*region Rating widget*/
+.jdgm-widget {
+  text-align: center;
+}
+.jdgm-prev-badge__text {
+  color: $dodger-blue;
+  font-weight: 500;
+  font-size: 4.26vmin;
+  text-transform: capitalize;
+  margin-left: 0.5em;
+
+  @include desktop {
+    font-size: 1.11vw;
+  }
+}
+/*endregion*/
+
+.jdgm-star {
+  color: #fed831 !important;
+}
+/*endregion*/
 
 .template-index {
 
@@ -8223,7 +8251,7 @@ h2.section-header {
       }
       &:after {
         order: 4;
-        content: 'Verified Purchase';
+        content: 'Compra verificada';
         color: $jungle-green;
         font-size: 4.2vw;
         font-weight: 500;
@@ -8974,10 +9002,6 @@ h2.section-header {
   }
 
   .product-price.on-sale {
-    color: #020202;
-    font-size: 50pt;
-    font-family: OpenSans;
-    color: #515151;
     margin-top: 0px;
   }
 
@@ -9055,7 +9079,7 @@ h2.section-header {
           }
           &:after {
             order: 4;
-            content: 'Verified Purchase';
+            content: 'Compra verificada';
             color: $jungle-green;
             font-size: 0.9em;
             letter-spacing: -0.01em;
@@ -9297,7 +9321,7 @@ h2.section-header {
           margin: 0 0.3em;
 
           @include desktop {
-            width: 20vw;
+            width: 25vw;
           }
 
         }
@@ -9416,8 +9440,8 @@ h2.section-header {
   padding: 7%;
   position: relative;
   margin: 0 auto;
-  width: 40vw;
-  height: 30vw;
+  width: 46vw;
+  height: 34vw;
 
   @include mobile-only {
     width: 100%;
@@ -9428,7 +9452,9 @@ h2.section-header {
   }
 
   .popup-close-btn {
-    font-family:brandon-grotesque-regular;font-size: 1.2vw;text-decoration: underline;
+    font-weight: 400;
+    font-size: 1.2vw;
+    text-decoration: underline;
     cursor: pointer;
 
     &.bottom {
@@ -9452,7 +9478,6 @@ h2.section-header {
       height: 30px;
       z-index: 23;
       text-decoration: none;
-      border: 2px solid black;
       padding: 0px;
       border-radius: 15px;
       box-shadow: 0px 0px 0px 0px rgba(50, 50, 50, 0.75);
@@ -9477,19 +9502,34 @@ h2.section-header {
   }
 
   h2 {
-    color: #58c8b2; font-family: "Have Heart One", sans-serif; font-size: 68px;
+    color: #58c8b2;
+    font-family: "Have Heart One", sans-serif;
+    font-size: 14vmin;
+    font-weight: 400;
     margin: 0;
+
+    @include desktop {
+      font-size: 4vw;
+    }
   }
   .popup-message {
-    font-size: 26px; line-height: 50px;max-width: 20em; margin: 0 auto;
+    font-size: 5.5vmin;
+    line-height: 1.5em;
+    max-width: 20em;
+    margin: 0 auto;
+
+    @include desktop {
+      font-size: 1.6vw;
+    }
     span {
-      color:#f472b1; font-weight: 500;
+      color:#f472b1;
+      font-weight: 500;
     }
   }
 
 
   #mc_embed_signup_scroll {
-    width: 500px;
+    width: 30vw;
     margin: 0 auto;
 
     @include mobile-only {
@@ -9504,28 +9544,25 @@ h2.section-header {
     color: green;
   }
   input {
-    width: 100%;
-    height: 55px;
-    margin: 0.5vw 0;
-    text-align: center;
-  }
-
-  #mce-EMAIL {
     opacity: 1;
+    width: 100%;
+    height: 2em;
+    font-family: Arial, Helvetica;
+    font-size: 5.4vmin;
     text-align: center;
     color: #000000;
-    font-family: Arial, Helvetica;
-    font-size: 16px;
-    border-style: solid;
-    padding: 0px 5px;
+    background-color: white;
+    border: 2px solid rgba(128,128,128,1);
     border-radius: 3px;
     box-shadow: 0px 0px 0px 0px rgba(50, 50, 50, 0.75);
-    background-color: rgba(255,255,255,1);
-    border-width: 2px;
-    border-color: rgba(128,128,128,1);
+    padding: 0px 5px;
+    margin: 0.3vw 0;
+
+    @include desktop {
+      font-size: 1.3vw;
+    }
   }
   #mc-embedded-subscribe {
-    font-size: 22px;
     letter-spacing: 0.05em;
     font-weight: bold;
     color: #aee9d8;
@@ -9565,7 +9602,8 @@ h2.section-header {
   }
 
   .popup-close-btn {
-    font-family:brandon-grotesque-regular;font-size: 1.2vw;text-decoration: underline;
+    font-size: 1.2vw;
+    text-decoration: underline;
     cursor: pointer;
 
     &.bottom {
@@ -9589,7 +9627,6 @@ h2.section-header {
       height: 30px;
       z-index: 23;
       text-decoration: none;
-      border: 2px solid black;
       padding: 0px;
       border-radius: 15px;
       box-shadow: 0px 0px 0px 0px rgba(50, 50, 50, 0.75);

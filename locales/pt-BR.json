@@ -103,8 +103,10 @@
   },
   "popups": {
     "hello": {
-      "hello_gorgerous": "Ei, você!",
+      "hello_gorgeous": "Ei, você!",
       "want_invites_html": "Quer receber notícias de ofertas e <span>convites exclusivos<\/span> para os eventos da Floatie Kings?",
+      "first_name": "Nome",
+      "last_name": "Sobrenome",
       "your_email": "seu email",
       "submit": "junte-se à nós",
       "no_thanks": "Não, obrigado, não gosto de me divertir e muito menos de descontos especiais",
