@@ -173,7 +173,7 @@
     <div class="full product-details">
       <div class="container parent">
         <form id="product-form" action="/cart/add" method="post" enctype="multipart/form-data" data-product-id="{{ product.id }}">
-          <h2 class="best-pool-brand">A marca <em>No.1</em> em boias no mundo</h2>
+          <h2 class="best-pool-brand">{{ 'products.product.number_one_brand_html' | t }}</h2>
           <div class="product-description rte" itemprop="description">{{ product.description }}</div>
 
           {% assign info = product.metafields.info %}

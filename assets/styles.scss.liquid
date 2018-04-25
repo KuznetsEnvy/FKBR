@@ -880,7 +880,6 @@ img {
   vertical-align: top
 }
 
-
 .container {
   padding: 0 3.125vw;
 
@@ -891,7 +890,6 @@ img {
     padding: 0;
   }
 }
-
 
 .reading-column {
   margin-left: auto;
@@ -1115,11 +1113,15 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
 .align-right, .align-right-desktop {
   text-align: right
 }
-
+//region theme-icons
 @font-face {
   font-family: 'theme-icons';
   src: url("//cdn.shopify.com/s/files/1/0934/6050/t/17/assets/theme-icons.eot?715719670659972549");
-  src: url("//cdn.shopify.com/s/files/1/0934/6050/t/17/assets/theme-icons.eot?#iefix715719670659972549") format("embedded-opentype"), url("{{ 'theme-icons.woff' | asset_url | split:'?' | first }}") format("woff"), url("{{ 'theme-icons.ttf' | asset_url | split:'?' | first }}") format("truetype"), url("//cdn.shopify.com/s/files/1/0934/6050/t/17/assets/theme-icons.svg?715719670659972549#icomoon") format("svg");
+  src:
+          url("//cdn.shopify.com/s/files/1/0934/6050/t/17/assets/theme-icons.eot?#iefix715719670659972549") format("embedded-opentype"),
+          url("{{ 'theme-icons.woff' | asset_url | split:'?' | first }}") format("woff"),
+          url("{{ 'theme-icons.ttf' | asset_url | split:'?' | first }}") format("truetype"),
+          url("//cdn.shopify.com/s/files/1/0934/6050/t/17/assets/theme-icons.svg?715719670659972549#icomoon") format("svg");
   font-weight: normal;
   font-style: normal
 }
@@ -1373,6 +1375,7 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
   width: 100%;
   text-align: center
 }
+//endregion
 
 h1,
  .slide .overlay .line-1,
@@ -3406,7 +3409,7 @@ ul.inline.list-divide li:first-child {
   clear: both
 }
 
-.collection-header.coloured-split.has-image h1 .collection-header.coloured-split.has-image .slide .overlay .line-1, .slide .overlay .collection-header.coloured-split.has-image .line-1, .collection-header.coloured-split.has-image .slide .overlay .line-2, .slide .overlay .collection-header.coloured-split.has-image .line-2, .collection-header.coloured-split.has-image #mobile-nav .nav-item, #mobile-nav .collection-header.coloured-split.has-image .nav-item, .collection-header.coloured-split.has-image #mobile-nav .sub-nav-item, #mobile-nav .collection-header.coloured-split.has-image .sub-nav-item, .collection-header.coloured-split.has-image .onboarding .onboarding-overlay, .onboarding .collection-header.coloured-split.has-image .onboarding-overlay, .collection-header.coloured-split.has-image h2, .collection-header.coloured-split.has-image .product-block .price .amount, .product-block .price .collection-header.coloured-split.has-image .amount, .collection-header.coloured-split.has-image h3, .collection-header.coloured-split.has-image h4, .collection-header.coloured-split.has-image blockquote, .collection-header.coloured-split.has-image .tile-group .overlay .inner, .tile-group .overlay .collection-header.coloured-split.has-image .inner, .collection-header.coloured-split.has-image .cart-summary-subtotal .amount, .cart-summary-subtotal .collection-header.coloured-split.has-image .amount, .collection-header.coloured-split.has-image h5, .collection-header.coloured-split.has-image h6, .collection-header.coloured-split.has-image a, .collection-header.coloured-split.has-image a:visited {
+.collection-header.coloured-split.has-image h1, .collection-header.coloured-split.has-image .slide .overlay .line-1, .slide .overlay .collection-header.coloured-split.has-image .line-1, .collection-header.coloured-split.has-image .slide .overlay .line-2, .slide .overlay .collection-header.coloured-split.has-image .line-2, .collection-header.coloured-split.has-image #mobile-nav .nav-item, #mobile-nav .collection-header.coloured-split.has-image .nav-item, .collection-header.coloured-split.has-image #mobile-nav .sub-nav-item, #mobile-nav .collection-header.coloured-split.has-image .sub-nav-item, .collection-header.coloured-split.has-image .onboarding .onboarding-overlay, .onboarding .collection-header.coloured-split.has-image .onboarding-overlay, .collection-header.coloured-split.has-image h2, .collection-header.coloured-split.has-image .product-block .price .amount, .product-block .price .collection-header.coloured-split.has-image .amount, .collection-header.coloured-split.has-image h3, .collection-header.coloured-split.has-image h4, .collection-header.coloured-split.has-image blockquote, .collection-header.coloured-split.has-image .tile-group .overlay .inner, .tile-group .overlay .collection-header.coloured-split.has-image .inner, .collection-header.coloured-split.has-image .cart-summary-subtotal .amount, .cart-summary-subtotal .collection-header.coloured-split.has-image .amount, .collection-header.coloured-split.has-image h5, .collection-header.coloured-split.has-image h6, .collection-header.coloured-split.has-image a, .collection-header.coloured-split.has-image a:visited {
   color: #ff7b00
 }
 
@@ -4624,16 +4627,6 @@ section.products-section .product-block .price.on-sale .amount, section.products
 .product-details .child.two-thirds {
   border-left: 1px dashed #515151
 }
-
-
-/*.secure-payment {
-  text-align: center;
-  margin-top: 40px;
-}
-
-.secure-payment img {
-  width: 320px;
-}*/
 
 .product-details .section.border-bottom {
   clear: both
@@ -7670,6 +7663,7 @@ b {
     }
     .grid {
       overflow-x: scroll;
+      -webkit-overflow-scrolling: touch;
 
       .grid-item {
         display: inline-flex;

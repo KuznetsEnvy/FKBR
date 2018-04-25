@@ -137,7 +137,8 @@
       "easy_setup_html": "<span>Instalação<\/span> <span>simples<\/span>",
       "secure_checkout_html": "<span>Compra<\/span> <span>segura<\/span>",
       "double_seam_technology_html": "<span>Double-seam<\/span> <span>technology<\/span>",
-      "fast_shipping_html": "<span>Envio<\/span> <span>rápido<\/span>"
+      "fast_shipping_html": "<span>Envio<\/span> <span>rápido<\/span>",
+      "number_one_brand_html": "A marca <em>No.1<\/em> em boias no mundo"
     },
     "labels": {
       "sale": "Promoção"
