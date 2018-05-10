@@ -23,7 +23,7 @@
             <li class="item border-bottom">
               <div class="description">
                 <a class="image" href="{{ item.url }}">
-                  <img src="{{ item | img_url: 'medium' }}" alt="{{ item.title | escape }}" />
+                  <img src="{{ 'transparent_pixel.png' | asset_url | split:"?" | first }}" data-src="{{ item | img_url: 'medium' }}" alt="{{ item.title | escape }}" />
                 </a>
                 <div class="left">
                   <div>{{ item.product.title | link_to: item.product.url }}</div>
@@ -70,7 +70,7 @@
         <div class="border-bottom">
           <div class="row">
             <input type="submit" style="display:none;" class="alt" id="update-cart" name="update" value="{{ 'cart.general.update' | t }}"/>
-            <div class="full column align-right">
+            <div class="full align-right">
               <div class="subtotal-wrap">
                 <div class="cart_total_left">
                   <label for="checkout">{{ 'cart.label.subtotal' | t }}</label>
@@ -78,21 +78,18 @@
                 <h2 class="cart_total_right">{{ cart.total_price | money }}</h2>
               </div>
 
-              {% comment %}
-                {% if free_shipping_from > c %}
-                  <div class="shippingmsg2">
-                    <i class="fa fa-exclamation" aria-hidden="true"></i> {{ 'cart.shipping.almost_there' | t }}
+              <div class="border-bottom visible-mobile">
+                <div class="row">
+                  <div class="align-center" style="width:100%;margin-bottom: 0.5rem; margin-top: 1.5rem;">
+                    <input style="width:100%" type="submit" id="checkout" name="checkout" value="{{ 'cart.general.checkout' | t }}" />
                   </div>
-                {% else %}
-                  <div class="shippingmsg2" style="font-size:15px;">
-                    <i class="fa fa-check-circle-o" aria-hidden="true"></i> {{ 'cart.shipping.free_shipping_added' | t }}
-                  </div>
-                {% endif %}
-              {% endcomment %}
-            </div>
-
-            <div class="column align-center" style="width:100%;margin-bottom: 1rem;">
-              <input style="width:100%" type="submit" id="checkout" name="checkout" value="{{ 'cart.general.checkout' | t }}" />
+                  {% if additional_checkout_buttons %}
+                    <div class="additional-checkout-buttons">
+                      {{ content_for_additional_checkout_buttons }}
+                    </div>
+                  {% endif %}
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -101,22 +98,19 @@
           {% include 'cart-page-products' %}
         {% endif %}
 
-        {% comment %}
-          <div class="shipping-banner cart">
-            <div class="nn-secondary-middle">{{ 'cart.shipping.shipping-banner_html' | t }} {{ settings.free_shipping_from | money }}</div>
-          </div>
-        {% endcomment %}
         <div class="border-bottom">
           <div class="row">
-            <div class="column align-center" style="width:100%;margin-bottom: 1rem;">
+            <div class="align-center" style="width:100%;margin-bottom: 1rem;">
               <input style="width:100%" type="submit" id="checkout" name="checkout" value="{{ 'cart.general.checkout' | t }}" />
             </div>
-            {% comment %}
-              <div class="column align-center" style="width:100%">
-                <p style="font-size:12px">You will be able to use your discount code in the next step</p>
+
+            {% if additional_checkout_buttons %}
+              <div class="additional-checkout-buttons">
+                {{ content_for_additional_checkout_buttons }}
               </div>
-            {% endcomment %}
-            <div class="column align-center cont" style="width:100%; margin-top: 15px;">
+            {% endif %}
+
+            <div class="align-center cont" style="width:100%; margin-top: 15px;">
               <a class="left continue" href="/">{{ 'cart.general.keep' | t }}</a>
             </div>
             <div class="clear"></div>

@@ -1,9 +1,7 @@
 <!doctype html>
-<!--[if IE 8]>
-<html class="no-js ie8" lang="en"> <![endif]-->
-<!--[if IE 9]>
-<html class="no-js ie9" lang="en"> <![endif]-->
-<!--[if (gt IE 10)|!(IE)]><!-->
+<!--[if IE]>
+<html class="no-js ie" lang="en"> <![endif]-->
+<!--[if !(IE)]><!-->
 <html class="no-js" lang="en"> <!--<![endif]-->
 <head>
   <!-- Canopy v1.0.10 -->
@@ -12,7 +10,7 @@
   <!--[if IE]>
   <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'/><![endif]-->
 
-  <link rel="shortcut icon" href="{{ 'favicon.png' | asset_url }}" type="image/png"/>
+  <link rel="shortcut icon" href="{{ 'favicon.png' | asset_url | split: '?' | first }}" type="image/png"/>
 
   <title>
     {{ page_title }}{% if current_tags %} &ndash; {{ 'general.meta.tagged' | t }} "{{ current_tags | join: ', ' }}"{% endif %}{% if current_page != 1 %} &ndash; {{ 'general.meta.page' | t }} {{ current_page }}{% endif %}{% unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless %}
@@ -29,9 +27,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="msvalidate.01" content="0C0638265DB078357F8582F42D67896E"/>
   <link rel="canonical" href="{{ canonical_url }}"/>
-  <!--link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet"-->
 
-  <script src="{{ 'styles.js' | asset_url }}" defer></script>
+  <script type="text/javascript">
+      /**
+       * to defer the loading of stylesheets this should go before the </body>
+       * tag and before any javaScript file inclusion (for performance)
+       * */
+      function loadStyleSheet(src) {
+          if (document.createStyleSheet) document.createStyleSheet(src);
+          else {
+              var stylesheet = document.createElement('link');
+              stylesheet.href = src;
+              stylesheet.rel = 'stylesheet';
+              stylesheet.type = 'text/css';
+              document.getElementsByTagName('head')[0].appendChild(stylesheet);
+          }
+      }
+
+      loadStyleSheet("{{ 'styles.scss.css' | asset_url }}");
+      {% if template contains 'product' %}
+        loadStyleSheet("{{ 'jquery.bxslider.css' | asset_url | split:'?' | first }}");
+      {% endif %}
+      // loadStyleSheet("https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css");
+
+  </script>
 
   {% include 'fb-open-graph-tags' %}
   {% include 'twitter-card' %}
@@ -51,10 +70,9 @@
   {% endif %}
 
   <script id="jquery" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js" defer></script>
-  <script id="jquery-cookies" src="{{ 'js.cookies-2.1.4.js' | asset_url | split:"?" | first }}" defer></script>
+  <script id="jquery-cookies" src="{{ 'js.cookies-2.2.0.min.js' | asset_url | split:"?" | first }}" defer></script>
 
-  {% comment %}
-  <script src="{{ 'exitintent.js' | asset_url | split:'?' | first }}" defer></script>{% endcomment %}
+  {% comment %}<script src="{{ 'exitintent.js' | asset_url | split:'?' | first }}" defer></script>{% endcomment %}
   <!--{{ 'api.jquery.js' | shopify_asset_url | script_tag }}-->
   <script src="{{ 'api.jquery.js' | shopify_asset_url }}" defer></script>
 
@@ -70,20 +88,21 @@
     {{ 'customer_area.js'  | shopify_asset_url | script_tag }}
   {% endif %}
 
+  {% comment %}
   <!--{{ 'option_selection.js' | shopify_asset_url | script_tag }}-->
   <script src="{{ 'option_selection.js' | shopify_asset_url }}" defer></script>
-  {% if template contains 'product' %}
-    <script id="bxslider" src="{{ 'jquery.bxslider.min.js' | asset_url | split:'?' | first }}" defer></script>
-  {% endif %}
+  {% endcomment %}
 
+  <!-- content for header -->
   {{ content_for_header }}
+  <!-- /content for header -->
 
   <script>
       document.documentElement.className = document.documentElement.className.replace('no-js', '');
       products = {};
       Shopify.money_format = {{ shop.money_format | json }};
   </script>
-  {% if template contains 'product' %}
+  {% if false and template contains 'product' %}
     <!--{{ 'jquery.elevatezoom.js' | asset_url | script_tag }}-->
     <script id="jquery_elevatezoom" src="{{ 'jquery.elevatezoom.js' | asset_url }}" defer></script>
   {% endif %}
@@ -94,8 +113,10 @@
   <!-- Pinterest visitor -->
   <img height="1" width="1" style="display:none;" alt="" src="https://ct.pinterest.com/?tid=8HcMxz0bQxu&value=0.00&quantity=1"/>
 
-  <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-instagram/0.3.1/instagram.min.js" defer></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.1/isotope.pkgd.min.js" defer></script>
+  {% comment %}
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-instagram/0.3.1/instagram.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.1/isotope.pkgd.min.js" defer></script>
+  {% endcomment %}
 
   <!-- BeginConsistentCartAddon -->
   <script src="{{ "consistent_cart_addon.min.js" | asset_url | split:'?' | first }}" defer></script>
@@ -108,6 +129,9 @@
   <script src="//code.jquery.com/ui/1.12.0/jquery-ui.js" defer></script>{% endcomment %}
   <script src="//code.jquery.com/ui/1.12.0/jquery-ui.min.js" defer></script>
   {% include 'judgeme_core' %}
+
+  <link rel="stylesheet" href="{{ 'responsivelyLazy.min.css' | asset_url | split: '?' | first }}">
+  <script async src="{{ 'responsivelyLazy.min.js' | asset_url | split: '?' | first }}"></script>
 </head>
 <body class="template-{{ template | split: '.' | first }} {{ template | split: '.' | join: '-' }} {{ page_title | handle }}">
 
@@ -119,30 +143,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div id="loading-overlay" style="z-index: 999; position: fixed; top:0; left: 0; width: 100%; height: 100%; display: flex; justify-content: center; align-items:center; background-color: white; display: none;">
   <img src="{{ 'FK_Crown_Loader2.gif' | asset_url | split:'?' | first }}" alt="loading image"/></div>
 <script>
-    document.getElementById("loading-overlay").style.display = "flex";
+  document.getElementById("loading-overlay").style.display = "flex";
 
-    window.onload = function () {
-        document.getElementById("loading-overlay").style.display = "none";
-      {% if template contains 'product' %}
-        var initBxSlider = function () {
-            $(function () {
-                var autostart = $('.bxslider li').length > 1 ? true : false;
+  var fkShowSite = function () {
+    document.getElementById("loading-overlay").style.display = "none";
+  };
 
-                $('.bxslider').bxSlider({
-                    responsive: true,
-                    touchEnabled: true,
-                    auto: true,
-                    adaptiveHeight: true,
-                    autoStart: autostart,
-                    pager: autostart,
-                    pagerCustom: '.bx-pager',
-                    controls: false,
-                    speed: 1000
-                });
-            });
-        }();
-      {% endif %}
-    };
+  window.addEventListener("load", fkShowSite);
 </script>
 
 <div id="header" class="cart">
@@ -251,7 +258,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 {% include 'mobile-navigation' %}
 {% comment %} {% include 'popup' %} {% endcomment %}
 
-{% if template contains 'index' %}<script id="instafeed-script" src="https://cdnjs.cloudflare.com/ajax/libs/instafeed.js/1.4.1/instafeed.min.js" defer></script>{% endif %}
+{% comment %}{% if template contains 'index' %}<script id="instafeed-script" src="https://cdnjs.cloudflare.com/ajax/libs/instafeed.js/1.4.1/instafeed.min.js" defer></script>{% endif %}{% endcomment %}
 <script src="{{ 'libs.js' | asset_url | split:"?" | first }}" defer></script>
 <script src="{{ 'scripts.js' | asset_url }}" defer></script>
 {% comment %}
@@ -395,10 +402,10 @@ Remarketing tags may not be associated with personally identifiable information 
   </div>
 </noscript>
 
-{% if template contains 'product' %}
-  {% include 'popup-stock' %}
-{% else %}
+{% if template contains 'index' %}
   {% include 'popup-hello' %}
+{% else %}
+  {% include 'popup-stock' %}
 {% endif %}
 
 </body>
