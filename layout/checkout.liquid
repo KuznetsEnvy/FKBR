@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="{{ locale }}" dir="{{ direction }}" class="{{ checkout_html_classes }}">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, height=device-height, minimum-scale=1.0, user-scalable=0">
+    <meta name="referrer" content="origin">
+
+    <title>{{ shop.name }} - {{ page_title }}</title>
+
+    {{ content_for_header }}
+
+    {{ checkout_stylesheets }}
+    {{ checkout_scripts }}
+
+    <script>
+        var tinySpacesProcess = function() {
+            var the_field = document.getElementById('checkout_shipping_address_address1');
+            the_field.value = the_field.value.replace(/, +/, ' ,');
+            the_field.value = the_field.value.replace(/, +/g, ',');
+        };
+        var tinySpacesInit = function() {
+            var the_button = document.querySelector('.main .step__footer button');
+            the_button.addEventListener('click', tinySpacesProcess);
+        };
+        window.addEventListener('load', tinySpacesInit)
+    </script>
+  </head>
+  <body>
+    <script>
+      if (document.getElementsByClassName("page--thank-you")[0] == null && window.location.href.indexOf("processing") == -1 ) {
+
+	    var css = '.displayNone { display: none !important; }',
+		    head = document.head || document.getElementsByTagName('head')[0],
+		    style = document.createElement('style');
+
+	    style.type = 'text/css';
+      if (style.styleSheet) {
+        style.styleSheet.cssText = css;
+      } else {
+        style.appendChild(document.createTextNode(css));
+      }
+
+      head.appendChild(style);
+
+
+      var css = document.createElement("link");
+        css.type = "text/css";
+        css.rel = "stylesheet";
+        css.href = "https://use.fontawesome.com/1aafd1f005.css";
+        document.getElementsByTagName('head')[0].appendChild(css);
+
+
+      document.documentElement.className += " displayNone";
+
+      head.appendChild(style);
+
+
+      //document.getElementsByTagName('html')[0].style.display = "none";
+      var css = document.createElement("link");
+      css.type = "text/css";
+      css.rel = "stylesheet";
+      //css.href = "//cdn.shopify.com/s/files/1/1741/5847/t/8/assets/customcheck.css?16146676155310741848";
+        css.href = "https://jossimages.azurewebsites.net/content/styEngieGeneral2.css";
+      document.getElementsByTagName('head')[0].appendChild(css);
+
+      /* add your css file */
+      var css = document.createElement("script");
+      css.type = "text/javascript";
+      //css.src = "https://cdn.shopify.com/s/files/1/2377/2819/files/customedit.js?5714250662063737281";
+        //css.src = "https://cdn.shopify.com/s/files/1/2377/2819/files/order2.js?11536577267460513194";
+        css.src ="https://cdn.shopify.com/s/files/1/2377/2819/files/customFloatie.js?7209134163203563982";
+        //css.src = "https://jossimages.azurewebsites.net/content/R2pantys3.js";
+      document.getElementsByTagName('body')[0].appendChild(css);
+
+    }
+    </script>
+    <style>
+      [data-step="payment_method"] form button.step__footer__continue-btn.btn.btn-success {
+          display: none;
+      }
+    </style>
+    <div class="banner" data-header>
+      <div class="wrap">
+        {{ content_for_logo }}
+      </div>
+    </div>
+
+    {{ order_summary_toggle }}
+
+    <div class="content" data-content>
+      <div class="wrap">
+        <div class="sidebar" role="complementary">
+          <div class="sidebar__header">
+            {{ content_for_logo }}
+          </div>
+          <div class="sidebar__content">
+            {{ content_for_order_summary }}
+          </div>
+        </div>
+        <div class="main" role="main">
+          <div class="main__header">
+            {{ content_for_logo }}
+            {{ breadcrumb }}
+            {{ alternative_payment_methods }}
+          </div>
+          <div class="main__content">
+            {{ content_for_layout }}
+          </div>
+          <div class="main__footer">
+            {{ content_for_footer }}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {{ tracking_code }}
+  </body>
+</html>
