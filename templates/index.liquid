@@ -1,8 +1,8 @@
 <div id="bicolorBanner" class="banner-index">
   <picture>
-    <source media="(min-width: 751px)" srcset="{{ 'header_banner_sale_BR.gif' | asset_url | split:"?" | first }}">
-    <source media="(min-width: 1px)" srcset="{{ 'header_banner_Sale_Mobile_BR.gif' | asset_url | split:"?" | first }}">
-    <img src="{{ 'header_banner_sale_BR.gif' | asset_url | split:"?" | first }}" alt="Homepage banner">
+    <source media="(min-width: 751px)" srcset="{{ '0603_header_banner_sale_BR.gif' | asset_url | split:"?" | first }}">
+    <source media="(min-width: 1px)" srcset="{{ '0603_header_banner_Sale_Mobile_BR.gif' | asset_url | split:"?" | first }}">
+    <img src="{{ '0603_header_banner_sale_BR.gif' | asset_url | split:"?" | first }}" alt="Homepage banner">
   </picture>
   {% comment %}
     <div id="banner-top-text">
@@ -56,7 +56,7 @@
                 if (seconds < 10) {seconds = "0"+seconds;}
 
                 // Display the result in the element with id="demo"
-                document.getElementById("countdown-stripe").innerHTML = "20% OFF em todo o site - <span>Corra!</span> <strong>" + hours + ":" + minutes + ":" + seconds + "</strong>";
+                document.getElementById("countdown-stripe").innerHTML = "50% OFF em todo o site - <span>Corra!</span> <strong>" + hours + ":" + minutes + ":" + seconds + "</strong>";
 
                 // If the count down is finished, write some text
                 if (distance < 0) {
