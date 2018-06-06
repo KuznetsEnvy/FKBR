@@ -121,6 +121,9 @@
     }
   },
   "products": {
+    "general": {
+      "add_these": "Adicionar ao carrinho:"
+    },
     "product": {
       "product_unavailable": "Produto Indisponível",
       "product_unavailable_html": "Indisponível - me avise quando voltar ao estoque",
