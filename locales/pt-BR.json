@@ -3,6 +3,10 @@
     "404": {
       "title": "Página não encontrada",
       "subtext_html": "Desculpe, não conseguimos encontrar essa página. <a href=\"\/\">Continue comprando<\/a> ou <a href=\"\/pages\/support\">notifique o problema<\/a>."
+    },
+    "installments": {
+      "times_by": "vezes de",
+      "without_interest": "sem juros"
     }
   },
   "layout": {
